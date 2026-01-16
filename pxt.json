@@ -1,0 +1,14 @@
+{
+    "name": "ble-advertise",
+    "version": "0.0.1",
+    "description": "Periodically advertise data",
+    "dependencies": {
+        "core": "*",
+        "bluetooth": "*"
+    },
+    "files": [
+        "main.ts",
+        "shims.d.ts",
+        "onebyte.cpp"
+    ]
+}
