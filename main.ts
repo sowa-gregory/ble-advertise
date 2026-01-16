@@ -1,21 +1,29 @@
 //% color=#00AEEF weight=90 icon="\uf294"
 namespace bleraw {
 
-    // Shim declaration
+    // Shim
     //% shim=bleraw::advertiseOneByteShim
     declare function advertiseOneByteShim(value: number): void;
 
+    let currentValue = 0
+    let started = false
+
     /**
-     * Periodically advertise one byte as manufacturer data.
-     * The byte is broadcast in a non-connectable BLE advertisement.
+     * Start continuous advertising of a byte.
+     * Calling this again changes the advertised byte.
      */
-    //% block="periodically advertise byte %value every %interval ms"
-    export function periodicByte(value: number, interval: number): void {
-        control.inBackground(function () {
-            while (true) {
-                advertiseOneByteShim(value);
-                basic.pause(interval);
-            }
-        });
+    //% block="advertise byte %value"
+    export function advertiseByte(value: number): void {
+        currentValue = value
+
+        if (!started) {
+            started = true
+            control.inBackground(function () {
+                while (true) {
+                    advertiseOneByteShim(currentValue)
+                    basic.pause(1000) // fixed 1s period
+                }
+            })
+        }
     }
 }
