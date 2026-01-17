@@ -6,6 +6,12 @@ namespace qwer {
     let currentValue = 0
     let started = false
  
+       //% shim=qwer::advShimq
+    
+    export function advShim():void {
+        return;
+    }
+    
     /**
      * Start continuous advertising of a byte.
      * Calling this again changes the advertised byte.
@@ -26,9 +32,5 @@ namespace qwer {
         }
     }
 
-      //% shim=qwer::advShimq
-    
-    export function advShim():void {
-        return;
-    }
+   
 }
