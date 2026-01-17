@@ -1,6 +1,6 @@
 {
     "name": "ble-advertise",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Periodically advertise data",
     "dependencies": {
         "core": "*",
