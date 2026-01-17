@@ -1,3 +1,4 @@
 declare namespace bleraw {
-    function advertiseOneByteShim(value: number): void;
+    //% shim=bleraw::advertiseOneByteShim
+    export function advertiseOneByteShim(value: number): void;
 }
