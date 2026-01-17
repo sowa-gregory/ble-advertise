@@ -1,14 +1,17 @@
 {
     "name": "ble-advertise",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "Periodically advertise data",
     "dependencies": {
         "core": "*",
-        "bluetooth": "*"
+        "microphone": "*"
     },
     "files": [
         "main.ts",
         "shims.d.ts",
         "onebyte.cpp"
-    ]
+    ],
+    "targetVersions": {
+        "microbit": "v2"
+    }
 }

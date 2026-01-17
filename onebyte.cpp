@@ -1,19 +1,35 @@
-#include "pxt.h"
-using namespace pxt;
+#include "MicroBit.h"
 
-namespace bleraw {
+extern MicroBit uBit;
 
-    // Advertise one byte as manufacturer data, non-connectable
-    void advertiseOneByteShim(uint8_t value) {
+namespace bleraw
+{
+    /**
+     * Advertise one custom byte using Eddystone UID beacon format (non-connectable).
+     * - namespace[0] = your custom byte
+     * - rest of namespace + instance = fixed/padded
+     * Very small packet (~20-25 bytes on air), low power, widely supported by scanners.
+     */
+    void advertiseOneByte(uint8_t value)
+    {
+        // Stop any current advertising (very important!)
+        uBit.bleManager.stopAdvertising();
 
-        // BLE advertisement:
-        // 02 01 06       → Flags
-        // 03 FF 01 XX    → Manufacturer data (XX = value)
-        uint8_t adv[] = {
-            0x02, 0x01, 0x06,
-            0x03, 0xFF, 0x01, value
-        };
+        // Eddystone UID format: 10 byte namespace + 6 byte instance
+        uint8_t namespace_id[10] = {value, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+        uint8_t instance_id[6]   = {0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC};  // arbitrary fixed pattern
 
-        uBit.bleManager.advertise(adv, sizeof(adv), false);
+        // -50 dBm tx power, non-connectable = true beacon mode
+        uBit.bleManager.advertiseEddystoneUid(
+            (const char*)namespace_id,
+            (const char*)instance_id,
+            -50,                // tx power calibration value
+            true                // non-connectable (beacon style)
+        );
+
+        // Optional: make advertising faster / lower power (default is usually ok)
+        // uBit.bleManager.setAdvertisingInterval(100);  // 100 ms
     }
+
+   
 }
