@@ -10,7 +10,7 @@ namespace bleraw
      * - rest of namespace + instance = fixed/padded
      * Very small packet (~20-25 bytes on air), low power, widely supported by scanners.
      */
-    void advertiseOneByte(uint8_t value)
+    void advertiseOneByteShim(uint8_t value)
     {
         // Stop any current advertising (very important!)
         uBit.bleManager.stopAdvertising();
