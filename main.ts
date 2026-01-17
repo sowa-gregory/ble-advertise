@@ -26,7 +26,7 @@ namespace qwer {
         }
     }
 
-      //% shim=qwer::advShim
+      //% shim=qwer::advShimq
     
     export function advShim():void {
         return;
