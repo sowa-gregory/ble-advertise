@@ -18,7 +18,8 @@ namespace bleraw {
             started = true
             control.inBackground(function () {
                 while (true) {
-                    advShim(currentValue)
+                    //advShim(currentValue)
+                    advShim()
                     basic.pause(1000) // fixed 1s period
                 }
             })
