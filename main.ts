@@ -7,7 +7,7 @@ namespace bleraw {
 
     let currentValue = 0
     let started = false
-
+ 
     /**
      * Start continuous advertising of a byte.
      * Calling this again changes the advertised byte.
