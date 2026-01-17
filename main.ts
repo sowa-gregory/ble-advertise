@@ -2,8 +2,8 @@
 namespace bleraw {
 
     // Shim
-    //% shim=bleraw::advertiseOneByteShim
-    declare function advertiseOneByteShim(value: number): void;
+    //% shim=bleraw::advertiseShim
+    declare function advertiseShim(value: number): void;
 
     let currentValue = 0
     let started = false
@@ -20,7 +20,7 @@ namespace bleraw {
             started = true
             control.inBackground(function () {
                 while (true) {
-                    advertiseOneByteShim(currentValue)
+                    advertiseShim(currentValue)
                     basic.pause(1000) // fixed 1s period
                 }
             })
