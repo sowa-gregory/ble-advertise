@@ -8,7 +8,7 @@
     },
     "files": [
         "main.ts",
-        "shims.d.ts",
+        "shims.ts",
         "onebyte.cpp"
     ],
     "targetVersions": {
