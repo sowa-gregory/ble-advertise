@@ -25,4 +25,10 @@ namespace qwer {
             })
         }
     }
+
+      //% shim=qwer::advShim
+    
+    export function advShim():void {
+        return;
+    }
 }
