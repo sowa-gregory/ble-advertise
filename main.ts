@@ -2,9 +2,7 @@
 namespace bleraw {
 
     // Shim
-    //% shim=bleraw::advShim
-    //declare function advShim(value: number): void;
-
+   
     let currentValue = 0
     let started = false
  
