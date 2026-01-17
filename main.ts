@@ -1,5 +1,5 @@
 //% color=#00AEEF weight=90 icon="\uf294"
-namespace bleraw {
+namespace qwer {
 
     // Shim
    
@@ -19,7 +19,7 @@ namespace bleraw {
             control.inBackground(function () {
                 while (true) {
                     //advShim(currentValue)
-                    advShim()
+                    qwer.advShim()
                     basic.pause(1000) // fixed 1s period
                 }
             })

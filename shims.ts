@@ -1,4 +1,4 @@
-declare namespace bleraw {
-    //% shim=bleraw::advShim
+declare namespace qwer {
+    //% shim=qwer::advShim
     function advShim(): void;
 }

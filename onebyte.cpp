@@ -2,7 +2,7 @@
 
 extern MicroBit uBit;
 
-namespace bleraw
+namespace qwer
 {
     /**
      * Advertise one custom byte using Eddystone UID beacon format (non-connectable).
