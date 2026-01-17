@@ -16,7 +16,7 @@ namespace bleraw
         uBit.bleManager.stopAdvertising();
 
         // Eddystone UID format: 10 byte namespace + 6 byte instance
-        uint8_t namespace_id[10] = {value, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+        uint8_t namespace_id[10] = {0x35, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
         uint8_t instance_id[6]   = {0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC};  // arbitrary fixed pattern
 
         // -50 dBm tx power, non-connectable = true beacon mode
