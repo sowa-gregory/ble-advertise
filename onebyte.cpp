@@ -10,6 +10,7 @@ namespace qwer
      * - rest of namespace + instance = fixed/padded
      * Very small packet (~20-25 bytes on air), low power, widely supported by scanners.
      */
+      //% shimqwer=qwer::advShim
     void advShim()
     {
         // Stop any current advertising (very important!)

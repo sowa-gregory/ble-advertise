@@ -6,7 +6,7 @@ namespace qwer {
     let currentValue = 0
     let started = false
  
-       //////% shimqwer=qwer::advShim
+    //% shimqwer=qwer::advShim
     
     export function advShim():void {
         return;
